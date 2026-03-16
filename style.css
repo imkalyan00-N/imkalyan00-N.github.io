@@ -5,11 +5,9 @@ background:black;
 color:white;
 text-align:center;
 font-family:Arial;
-overflow-x:hidden;
+overflow:hidden;
 
 }
-
-/* galaxy background canvas */
 
 canvas{
 
@@ -28,12 +26,11 @@ display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
-min-height:100vh;
-padding-bottom:120px;
+height:100vh;
 
 }
 
-/* profile image */
+/* dp */
 
 .dp{
 
@@ -43,7 +40,7 @@ border-radius:50%;
 
 }
 
-/* glowing ring around dp */
+/* glowing ring */
 
 .dpRing{
 
@@ -54,37 +51,23 @@ background:linear-gradient(
 45deg,
 cyan,
 magenta,
-blue,
+yellow,
 cyan
 );
 
-animation:ring 3s linear infinite;
+animation:ring 4s linear infinite;
 
 }
 
 @keyframes ring{
 
-0%{
-
-box-shadow:0 0 10px cyan;
-
-}
-
-50%{
-
-box-shadow:0 0 50px magenta;
+0%{box-shadow:0 0 10px cyan}
+50%{box-shadow:0 0 40px magenta}
+100%{box-shadow:0 0 10px cyan}
 
 }
 
-100%{
-
-box-shadow:0 0 10px cyan;
-
-}
-
-}
-
-/* animated name font */
+/* animated name */
 
 .name{
 
@@ -115,48 +98,42 @@ margin-top:20px;
 @keyframes rainbow{
 
 0%{background-position:0%}
-
 100%{background-position:400%}
 
 }
 
-/* bio text animation */
+/* bio */
 
 .bio{
 
 font-size:22px;
 margin-top:20px;
-line-height:36px;
+line-height:35px;
 
-text-shadow:
+background:linear-gradient(
+90deg,
+cyan,
+magenta,
+yellow,
+lime,
+orange
+);
 
-0 0 5px cyan,
-0 0 10px cyan,
-0 0 20px magenta;
+background-size:400%;
 
-animation:bioGlow 2s infinite alternate;
+-webkit-background-clip:text;
 
-}
+color:transparent;
 
-@keyframes bioGlow{
-
-from{
-
-text-shadow:0 0 10px cyan;
-
-}
-
-to{
-
-text-shadow:0 0 20px magenta;
-
-}
+animation:rainbow 8s linear infinite;
 
 }
 
 /* buttons */
 
 .btn{
+
+margin-top:30px;
 
 padding:15px 45px;
 
@@ -174,8 +151,6 @@ cyan
 
 color:white;
 
-margin-top:25px;
-
 box-shadow:
 
 0 0 20px cyan,
@@ -184,8 +159,6 @@ box-shadow:
 transition:0.3s;
 
 }
-
-/* button hover */
 
 .btn:hover{
 

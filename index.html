@@ -1,44 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Kalyan Universe</title>
 <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<canvas id="space"></canvas>
+<canvas id="stars"></canvas>
 
 <div class="center">
 
-<h1 class="title">Enter Your Name</h1>
+<div class="dpRing">
+<img src="IMG_20260315_183526.png" class="dp">
+</div>
 
-<input id="nameInput" placeholder="Your name">
+<h1 class="name">Kalyan</h1>
 
-<br><br>
+<div class="bio">
 
-<button onclick="start()" class="btn">ENTER</button>
+Madness » 100% 😂 <br>
+Dirty Minded » 90% 💀 <br>
+Funny » Definitely 😜 <br>
+In Love » Yes With My Puppy 🐶
+
+</div>
+
+<button class="btn" onclick="enterUniverse()">
+ENTER UNIVERSE
+</button>
 
 </div>
 
 <script src="main.js"></script>
 
-<script>
-
-function start(){
-
-let name=document.getElementById("nameInput").value
-
-if(name=="") name="Guest"
-
-localStorage.setItem("username",name)
-
-window.location.href="intro.html"
-
-}
-
-</script>
-
 </body>
+
 </html>

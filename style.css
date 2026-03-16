@@ -1,0 +1,112 @@
+body{
+
+margin:0;
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+overflow:hidden;
+
+}
+
+canvas{
+
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+
+}
+
+.center{
+
+margin-top:150px;
+
+}
+
+.title{
+
+font-size:40px;
+color:cyan;
+text-shadow:0 0 20px cyan;
+
+}
+
+.name{
+
+font-size:70px;
+
+background:linear-gradient(
+90deg,
+cyan,
+magenta,
+yellow,
+lime,
+orange,
+cyan
+);
+
+background-size:400%;
+
+-webkit-background-clip:text;
+color:transparent;
+
+animation:rainbow 6s linear infinite;
+
+}
+
+@keyframes rainbow{
+
+0%{background-position:0%}
+100%{background-position:400%}
+
+}
+
+.dp{
+
+width:180px;
+height:180px;
+border-radius:50%;
+
+}
+
+.dpRing{
+
+display:inline-block;
+padding:10px;
+border-radius:50%;
+
+background:linear-gradient(cyan,magenta);
+
+animation:ring 3s linear infinite;
+
+}
+
+@keyframes ring{
+
+0%{box-shadow:0 0 10px cyan}
+50%{box-shadow:0 0 40px magenta}
+100%{box-shadow:0 0 10px cyan}
+
+}
+
+.btn{
+
+padding:15px 40px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,cyan,magenta);
+color:white;
+font-size:18px;
+margin-top:20px;
+
+box-shadow:0 0 20px cyan;
+
+}
+
+.bio{
+
+font-size:22px;
+margin-top:20px;
+
+}

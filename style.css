@@ -5,9 +5,11 @@ background:black;
 color:white;
 text-align:center;
 font-family:Arial;
-overflow:hidden;
+overflow-x:hidden;
 
 }
+
+/* galaxy background canvas */
 
 canvas{
 
@@ -18,23 +20,75 @@ z-index:-1;
 
 }
 
+/* center layout */
+
 .center{
 
-margin-top:150px;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:100vh;
+padding-bottom:120px;
 
 }
 
-.title{
+/* profile image */
 
-font-size:40px;
-color:cyan;
-text-shadow:0 0 20px cyan;
+.dp{
+
+width:180px;
+height:180px;
+border-radius:50%;
 
 }
+
+/* glowing ring around dp */
+
+.dpRing{
+
+padding:8px;
+border-radius:50%;
+
+background:linear-gradient(
+45deg,
+cyan,
+magenta,
+blue,
+cyan
+);
+
+animation:ring 3s linear infinite;
+
+}
+
+@keyframes ring{
+
+0%{
+
+box-shadow:0 0 10px cyan;
+
+}
+
+50%{
+
+box-shadow:0 0 50px magenta;
+
+}
+
+100%{
+
+box-shadow:0 0 10px cyan;
+
+}
+
+}
+
+/* animated name font */
 
 .name{
 
-font-size:70px;
+font-size:65px;
 
 background:linear-gradient(
 90deg,
@@ -49,64 +103,97 @@ cyan
 background-size:400%;
 
 -webkit-background-clip:text;
+
 color:transparent;
 
 animation:rainbow 6s linear infinite;
+
+margin-top:20px;
 
 }
 
 @keyframes rainbow{
 
 0%{background-position:0%}
+
 100%{background-position:400%}
 
 }
 
-.dp{
-
-width:180px;
-height:180px;
-border-radius:50%;
-
-}
-
-.dpRing{
-
-display:inline-block;
-padding:10px;
-border-radius:50%;
-
-background:linear-gradient(cyan,magenta);
-
-animation:ring 3s linear infinite;
-
-}
-
-@keyframes ring{
-
-0%{box-shadow:0 0 10px cyan}
-50%{box-shadow:0 0 40px magenta}
-100%{box-shadow:0 0 10px cyan}
-
-}
-
-.btn{
-
-padding:15px 40px;
-border:none;
-border-radius:30px;
-background:linear-gradient(45deg,cyan,magenta);
-color:white;
-font-size:18px;
-margin-top:20px;
-
-box-shadow:0 0 20px cyan;
-
-}
+/* bio text animation */
 
 .bio{
 
 font-size:22px;
 margin-top:20px;
+line-height:36px;
+
+text-shadow:
+
+0 0 5px cyan,
+0 0 10px cyan,
+0 0 20px magenta;
+
+animation:bioGlow 2s infinite alternate;
+
+}
+
+@keyframes bioGlow{
+
+from{
+
+text-shadow:0 0 10px cyan;
+
+}
+
+to{
+
+text-shadow:0 0 20px magenta;
+
+}
+
+}
+
+/* buttons */
+
+.btn{
+
+padding:15px 45px;
+
+border:none;
+border-radius:30px;
+
+font-size:18px;
+
+background:linear-gradient(
+45deg,
+cyan,
+magenta,
+cyan
+);
+
+color:white;
+
+margin-top:25px;
+
+box-shadow:
+
+0 0 20px cyan,
+0 0 40px magenta;
+
+transition:0.3s;
+
+}
+
+/* button hover */
+
+.btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:
+
+0 0 30px cyan,
+0 0 60px magenta;
 
 }

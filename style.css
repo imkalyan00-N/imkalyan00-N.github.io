@@ -1,0 +1,98 @@
+body{
+margin:0;
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+overflow:hidden;
+}
+
+/* layout */
+
+.center{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+height:100vh;
+}
+
+/* dp */
+
+.dp{
+width:180px;
+height:180px;
+border-radius:50%;
+}
+
+/* ring */
+
+.dpRing{
+padding:10px;
+border-radius:50%;
+background:linear-gradient(45deg,cyan,magenta,yellow,cyan);
+animation:ring 2s linear infinite;
+}
+
+@keyframes ring{
+0%{box-shadow:0 0 20px cyan}
+50%{box-shadow:0 0 60px magenta}
+100%{box-shadow:0 0 20px cyan}
+}
+
+/* name 3D */
+
+.name{
+font-size:70px;
+background:linear-gradient(90deg,cyan,magenta,yellow,lime,orange,cyan);
+background-size:400%;
+-webkit-background-clip:text;
+color:transparent;
+animation:rainbow 5s linear infinite;
+text-shadow:0 0 20px cyan;
+}
+
+@keyframes rainbow{
+0%{background-position:0%}
+100%{background-position:400%}
+}
+
+/* bio 3D */
+
+.bio{
+font-size:22px;
+margin-top:20px;
+line-height:35px;
+
+background:linear-gradient(90deg,cyan,magenta,yellow,lime);
+background-size:400%;
+-webkit-background-clip:text;
+color:transparent;
+
+animation:rainbow 8s linear infinite;
+
+text-shadow:
+0 0 5px cyan,
+0 0 10px magenta,
+0 0 20px yellow;
+
+}
+
+/* button */
+
+.btn{
+margin-top:30px;
+padding:15px 50px;
+border:none;
+border-radius:30px;
+font-size:18px;
+background:linear-gradient(45deg,cyan,magenta,cyan);
+color:white;
+box-shadow:0 0 20px cyan,0 0 40px magenta;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+box-shadow:0 0 50px cyan;
+}

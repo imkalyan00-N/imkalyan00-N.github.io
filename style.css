@@ -1,98 +1,225 @@
 body{
+
 margin:0;
 background:black;
+font-family:monospace;
 color:white;
-text-align:center;
-font-family:Arial;
 overflow:hidden;
+
 }
 
-/* layout */
+.home{
 
-.center{
 display:flex;
 flex-direction:column;
 align-items:center;
 justify-content:center;
+
 height:100vh;
+text-align:center;
+
 }
 
-/* dp */
+/* DP */
 
 .dp{
-width:180px;
-height:180px;
+
+width:150px;
+height:150px;
+
 border-radius:50%;
+object-fit:cover;
+
+position:relative;
+z-index:2;
+
 }
 
-/* ring */
+/* Rings */
 
-.dpRing{
-padding:10px;
+.dpBox{
+
+position:relative;
+
+margin-bottom:10px;
+
+}
+
+.ring1{
+
+position:absolute;
+
+width:200px;
+height:200px;
+
 border-radius:50%;
-background:linear-gradient(45deg,cyan,magenta,yellow,cyan);
-animation:ring 2s linear infinite;
+
+border:3px solid cyan;
+
+top:-25px;
+left:-25px;
+
+box-shadow:
+
+0 0 20px cyan,
+0 0 60px cyan;
+
+animation:spin 6s linear infinite;
+
 }
 
-@keyframes ring{
-0%{box-shadow:0 0 20px cyan}
-50%{box-shadow:0 0 60px magenta}
-100%{box-shadow:0 0 20px cyan}
+.ring2{
+
+position:absolute;
+
+width:240px;
+height:240px;
+
+border-radius:50%;
+
+border:2px solid magenta;
+
+top:-45px;
+left:-45px;
+
+box-shadow:0 0 40px magenta;
+
+animation:spinReverse 8s linear infinite;
+
 }
 
-/* name 3D */
+@keyframes spin{
+
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
+
+}
+
+@keyframes spinReverse{
+
+0%{transform:rotate(360deg)}
+100%{transform:rotate(0)}
+
+}
+
+/* Stylish name */
 
 .name{
-font-size:70px;
-background:linear-gradient(90deg,cyan,magenta,yellow,lime,orange,cyan);
+
+font-size:42px;
+
+background:linear-gradient(
+90deg,
+cyan,
+magenta,
+yellow,
+lime,
+cyan
+);
+
 background-size:400%;
+
 -webkit-background-clip:text;
-color:transparent;
-animation:rainbow 5s linear infinite;
-text-shadow:0 0 20px cyan;
-}
 
-@keyframes rainbow{
-0%{background-position:0%}
-100%{background-position:400%}
-}
-
-/* bio 3D */
-
-.bio{
-font-size:22px;
-margin-top:20px;
-line-height:35px;
-
-background:linear-gradient(90deg,cyan,magenta,yellow,lime);
-background-size:400%;
--webkit-background-clip:text;
 color:transparent;
 
-animation:rainbow 8s linear infinite;
+animation:shine 5s linear infinite;
 
 text-shadow:
-0 0 5px cyan,
-0 0 10px magenta,
-0 0 20px yellow;
+
+0 0 20px cyan,
+0 0 40px magenta;
 
 }
 
-/* button */
+@keyframes shine{
+
+0%{background-position:0%}
+100%{background-position:400%}
+
+}
+
+/* BIO */
+
+.bio{
+
+font-size:18px;
+
+line-height:1.6;
+
+margin-top:10px;
+
+background:linear-gradient(
+90deg,
+lime,
+cyan,
+magenta
+);
+
+-webkit-background-clip:text;
+color:transparent;
+
+}
+
+/* Marvel button */
 
 .btn{
-margin-top:30px;
-padding:15px 50px;
+
+margin:12px;
+
+padding:15px;
+
+width:230px;
+
 border:none;
-border-radius:30px;
-font-size:18px;
-background:linear-gradient(45deg,cyan,magenta,cyan);
-color:white;
-box-shadow:0 0 20px cyan,0 0 40px magenta;
+border-radius:40px;
+
+font-size:17px;
+font-weight:bold;
+
+cursor:pointer;
+
+background:linear-gradient(
+45deg,
+#00ffff,
+#00ff88,
+#66ff00
+);
+
+box-shadow:
+
+0 0 20px cyan,
+0 0 60px cyan,
+0 0 100px cyan;
+
 transition:0.3s;
+
 }
 
 .btn:hover{
+
 transform:scale(1.1);
-box-shadow:0 0 50px cyan;
+
+box-shadow:
+
+0 0 40px cyan,
+0 0 100px cyan,
+0 0 200px cyan;
+
+}
+
+/* butterfly canvas */
+
+#butterflyCanvas{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
 }

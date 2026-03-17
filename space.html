@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Kalyan Magic</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<canvas id="bg"></canvas>
+
+<div class="center">
+
+<div class="dpRing">
+<img src="IMG_20260315_183552.jpg" class="dp">
+</div>
+
+<h1 class="name">Kalyan</h1>
+
+<div class="bio">
+
+Madness » 100% 😂 <br>
+Dirty Minded » 90% 💀 <br>
+Funny » Definitely 😜 <br>
+In Love » Yes With My Puppy 🐶
+
+</div>
+
+<button class="btn" onclick="magic()">MAGIC</button>
+<button class="btn" onclick="back()">BACK</button>
+
+</div>
+
+<script>
+
+function magic(){
+
+document.body.style.background="black"
+
+let msg=document.createElement("h1")
+msg.innerText="👻 DON'T LOOK BEHIND..."
+msg.style.color="red"
+msg.style.textAlign="center"
+msg.style.marginTop="40vh"
+
+document.body.appendChild(msg)
+
+}
+
+function back(){
+
+window.location="index.html"
+
+}
+
+</script>
+
+</body>
+</html>
